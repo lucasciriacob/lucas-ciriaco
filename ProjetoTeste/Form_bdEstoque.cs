@@ -39,7 +39,6 @@ namespace ProjetoTeste
                 {
                     MessageBox.Show("Erro ao carregar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
     }

@@ -25,7 +25,7 @@ namespace ProjetoTeste
         {
             InitializeComponent();
         }
-        
+
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -38,60 +38,44 @@ namespace ProjetoTeste
             {
                 conexao.Open();
 
-                // Primeiro passo: verificar se existe usuário e senha válidos
-                string queryVerificar = "SELECT COUNT(*) FROM usuario WHERE TRIM(nomeUsuario) = @nomeUsuario AND TRIM(senha) = @senha";
+                string queryLogin = "SELECT id, tipo_usuario FROM usuario WHERE TRIM(nomeUsuario) = @nomeUsuario AND TRIM(senha) = @senha";
 
-                using (MySqlCommand cmdVerificar = new MySqlCommand(queryVerificar, conexao))
+                using (MySqlCommand cmdLogin = new MySqlCommand(queryLogin, conexao))
                 {
-                    cmdVerificar.Parameters.AddWithValue("@nomeUsuario", usuario);
-                    cmdVerificar.Parameters.AddWithValue("@senha", senha);
+                    cmdLogin.Parameters.AddWithValue("@nomeUsuario", usuario);
+                    cmdLogin.Parameters.AddWithValue("@senha", senha);
 
-                    int count = Convert.ToInt32(cmdVerificar.ExecuteScalar());
-
-                    if (count > 0)
+                    using (MySqlDataReader reader = cmdLogin.ExecuteReader())
                     {
-                        // Segundo passo: buscar o tipo do usuário
-                        string queryTipo = "SELECT tipo_usuario FROM usuario WHERE TRIM(nomeUsuario) = @nomeUsuario AND TRIM(senha) = @senha";
-
-                        using (MySqlCommand cmdTipo = new MySqlCommand(queryTipo, conexao))
+                        if (reader.Read())
                         {
-                            cmdTipo.Parameters.AddWithValue("@nomeUsuario", usuario);
-                            cmdTipo.Parameters.AddWithValue("@senha", senha);
-                            object result = cmdTipo.ExecuteScalar();
+                            int idUsuario = reader.GetInt32("id");
+                            string tipoUsuario = reader.GetString("tipo_usuario");
 
-                            if (result != null)
+                            Sessao.UsuarioId = idUsuario; 
+
+                            LimparCampos();
+
+                            if (tipoUsuario == "Admin")
                             {
-                                string tipoUsuario = result.ToString();
-
-                                if (tipoUsuario == "Admin")
-                                {
-                                    LimparCampos();
-                                    FormMenu formAdmin = new FormMenu();
-                                    formAdmin.Show();
-                                }
-                                else
-                                {
-                                    LimparCampos();
-                                    FormMenu2 formFuncionario = new FormMenu2();
-                                    formFuncionario.Show();
-                                }
-
-                                
+                                FormMenu formAdmin = new FormMenu();
+                                formAdmin.Show();
                             }
                             else
                             {
-                                LimparCampos();
-                                MessageBox.Show("Erro ao buscar tipo de usuário.");
+                                Principal formFuncionario = new Principal();
+                                formFuncionario.Show();
                             }
                         }
-                    }
-                    else
-                    {   
-                        MessageBox.Show("Usuário ou senha incorretos.");
+                        else
+                        {
+                            MessageBox.Show("Usuário ou senha incorretos.");
+                        }
                     }
                 }
             }
         }
+
 
 
         private void cbxSenha_CheckedChanged(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace ProjetoTeste
 {
-    partial class FormMenu2
+    partial class Principal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            menuStrip1 = new MenuStrip();
+            mnsSair = new ToolStripMenuItem();
+            mnsCadastro = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // dataGridView1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(281, 164);
-            label1.Name = "label1";
-            label1.Size = new Size(37, 15);
-            label1.TabIndex = 0;
-            label1.Text = "TESTE";
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 27);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(323, 232);
+            dataGridView1.TabIndex = 0;
             // 
-            // FormMenu2
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnsSair, mnsCadastro });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.RightToLeft = RightToLeft.Yes;
+            menuStrip1.Size = new Size(340, 24);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // mnsSair
+            // 
+            mnsSair.Name = "mnsSair";
+            mnsSair.Size = new Size(38, 20);
+            mnsSair.Text = "Sair";
+            mnsSair.Click += mnsSair_Click;
+            // 
+            // mnsCadastro
+            // 
+            mnsCadastro.Name = "mnsCadastro";
+            mnsCadastro.Size = new Size(96, 20);
+            mnsCadastro.Text = "Cadastrar Item";
+            mnsCadastro.Click += mnsCadastro_Click;
+            // 
+            // Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Name = "FormMenu2";
-            Text = "FormMenu2";
+            ClientSize = new Size(340, 265);
+            Controls.Add(dataGridView1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Principal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Principal";
+            Load += Principal_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private DataGridView dataGridView1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem mnsCadastro;
+        private ToolStripMenuItem mnsSair;
     }
 }
