@@ -38,6 +38,12 @@ namespace ProjetoTeste
             if (chkVencimento.Checked)
             {
                 dtpVencimento.Enabled = false;
+                dtpVencimento.Text = "31/12/9998";
+            }
+            else
+            {
+                dtpVencimento.Enabled = true;
+                dtpVencimento.Value = DateTime.Now;
             }
 
         }
