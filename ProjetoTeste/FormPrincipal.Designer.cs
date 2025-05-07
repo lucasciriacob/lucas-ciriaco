@@ -64,8 +64,8 @@
             // mnsListaBD
             // 
             mnsListaBD.Name = "mnsListaBD";
-            mnsListaBD.Size = new Size(74, 20);
-            mnsListaBD.Text = "Listar Item";
+            mnsListaBD.Size = new Size(104, 20);
+            mnsListaBD.Text = "Atualizar Página";
             mnsListaBD.Click += mnsListaBD_Click;
             // 
             // dataGridView1
@@ -75,7 +75,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(340, 238);
             dataGridView1.TabIndex = 2;
-            dataGridView1.Visible = false;
             // 
             // Principal
             // 

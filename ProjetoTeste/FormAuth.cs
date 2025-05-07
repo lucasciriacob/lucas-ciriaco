@@ -52,7 +52,7 @@ namespace ProjetoTeste
                             int idUsuario = reader.GetInt32("id");
                             string tipoUsuario = reader.GetString("tipo_usuario");
 
-                            Sessao.UsuarioId = idUsuario; 
+                            Sessao.UsuarioId = idUsuario;
 
                             LimparCampos();
 
@@ -81,6 +81,22 @@ namespace ProjetoTeste
         private void cbxSenha_CheckedChanged(object sender, EventArgs e)
         {
             txtSenha.PasswordChar = chkSenha.Checked ? '\0' : '*';
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSalvar.PerformClick();
+            }
         }
     }
 

@@ -41,6 +41,7 @@
             txtUser.PlaceholderText = "Usuario...";
             txtUser.Size = new Size(227, 23);
             txtUser.TabIndex = 0;
+            txtUser.KeyDown += txtUser_KeyDown;
             // 
             // txtSenha
             // 
@@ -50,6 +51,7 @@
             txtSenha.PlaceholderText = "Senha...";
             txtSenha.Size = new Size(227, 23);
             txtSenha.TabIndex = 1;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // btnSalvar
             // 

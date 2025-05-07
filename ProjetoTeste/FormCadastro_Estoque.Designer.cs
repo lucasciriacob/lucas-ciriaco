@@ -50,6 +50,7 @@
             txtNome.Size = new Size(172, 23);
             txtNome.TabIndex = 1;
             txtNome.TextAlign = HorizontalAlignment.Center;
+            txtNome.KeyDown += txtNome_KeyDown;
             // 
             // txtDescricao
             // 
@@ -59,6 +60,7 @@
             txtDescricao.PlaceholderText = "Descrição...";
             txtDescricao.Size = new Size(366, 105);
             txtDescricao.TabIndex = 4;
+            txtDescricao.KeyDown += txtDescricao_KeyDown;
             // 
             // cbxCategoria
             // 
@@ -68,6 +70,7 @@
             cbxCategoria.Name = "cbxCategoria";
             cbxCategoria.Size = new Size(172, 23);
             cbxCategoria.TabIndex = 5;
+            cbxCategoria.KeyDown += cbxCategoria_KeyDown;
             // 
             // label1
             // 
@@ -146,6 +149,7 @@
             mskId.TabIndex = 6;
             mskId.TextAlign = HorizontalAlignment.Center;
             mskId.ValidatingType = typeof(int);
+            mskId.KeyDown += mskId_KeyDown;
             // 
             // txtQTD
             // 
@@ -154,6 +158,7 @@
             txtQTD.PlaceholderText = "Quantidade...";
             txtQTD.Size = new Size(172, 23);
             txtQTD.TabIndex = 15;
+            txtQTD.KeyDown += txtQTD_KeyDown;
             // 
             // FormCadastro_Estoque
             // 

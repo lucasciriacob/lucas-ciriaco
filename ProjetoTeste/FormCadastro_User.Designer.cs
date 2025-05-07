@@ -34,18 +34,18 @@
             mskCEP = new MaskedTextBox();
             mskCPF = new MaskedTextBox();
             gbxTipoFuncionario = new GroupBox();
+            rdbComum = new RadioButton();
+            rdbAdmin = new RadioButton();
             gbxTipoTelefone = new GroupBox();
+            rdbRecado = new RadioButton();
+            rdbComercial = new RadioButton();
+            rdbPessoal = new RadioButton();
             chkSenha = new CheckBox();
             label1 = new Label();
             label2 = new Label();
             btnRegistro = new Button();
             mskTelefone = new MaskedTextBox();
             label3 = new Label();
-            rdbPessoal = new RadioButton();
-            rdbComercial = new RadioButton();
-            rdbRecado = new RadioButton();
-            rdbAdmin = new RadioButton();
-            rdbComum = new RadioButton();
             gbxTipoFuncionario.SuspendLayout();
             gbxTipoTelefone.SuspendLayout();
             SuspendLayout();
@@ -57,6 +57,7 @@
             txtUsuario.PlaceholderText = "Usuario...";
             txtUsuario.Size = new Size(194, 23);
             txtUsuario.TabIndex = 0;
+            txtUsuario.KeyDown += txtUsuario_KeyDown;
             // 
             // txtSenha
             // 
@@ -66,6 +67,7 @@
             txtSenha.PlaceholderText = "Senha...";
             txtSenha.Size = new Size(194, 23);
             txtSenha.TabIndex = 1;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // txtEmail
             // 
@@ -74,6 +76,7 @@
             txtEmail.PlaceholderText = "Email...";
             txtEmail.Size = new Size(194, 23);
             txtEmail.TabIndex = 2;
+            txtEmail.KeyDown += txtEmail_KeyDown;
             // 
             // mskCEP
             // 
@@ -82,6 +85,7 @@
             mskCEP.Name = "mskCEP";
             mskCEP.Size = new Size(194, 23);
             mskCEP.TabIndex = 3;
+            mskCEP.KeyDown += mskCEP_KeyDown;
             // 
             // mskCPF
             // 
@@ -90,6 +94,7 @@
             mskCPF.Name = "mskCPF";
             mskCPF.Size = new Size(194, 23);
             mskCPF.TabIndex = 4;
+            mskCPF.KeyDown += mskCPF_KeyDown;
             // 
             // gbxTipoFuncionario
             // 
@@ -102,6 +107,28 @@
             gbxTipoFuncionario.TabStop = false;
             gbxTipoFuncionario.Text = "Funcionario";
             // 
+            // rdbComum
+            // 
+            rdbComum.AutoSize = true;
+            rdbComum.Location = new Point(14, 66);
+            rdbComum.Name = "rdbComum";
+            rdbComum.Size = new Size(69, 19);
+            rdbComum.TabIndex = 1;
+            rdbComum.TabStop = true;
+            rdbComum.Text = "Comum";
+            rdbComum.UseVisualStyleBackColor = true;
+            // 
+            // rdbAdmin
+            // 
+            rdbAdmin.AutoSize = true;
+            rdbAdmin.Location = new Point(15, 31);
+            rdbAdmin.Name = "rdbAdmin";
+            rdbAdmin.Size = new Size(61, 19);
+            rdbAdmin.TabIndex = 0;
+            rdbAdmin.TabStop = true;
+            rdbAdmin.Text = "Admin";
+            rdbAdmin.UseVisualStyleBackColor = true;
+            // 
             // gbxTipoTelefone
             // 
             gbxTipoTelefone.Controls.Add(rdbRecado);
@@ -113,6 +140,39 @@
             gbxTipoTelefone.TabIndex = 6;
             gbxTipoTelefone.TabStop = false;
             gbxTipoTelefone.Text = "Tipo de Telefone";
+            // 
+            // rdbRecado
+            // 
+            rdbRecado.AutoSize = true;
+            rdbRecado.Location = new Point(10, 72);
+            rdbRecado.Name = "rdbRecado";
+            rdbRecado.Size = new Size(64, 19);
+            rdbRecado.TabIndex = 2;
+            rdbRecado.TabStop = true;
+            rdbRecado.Text = "Recado";
+            rdbRecado.UseVisualStyleBackColor = true;
+            // 
+            // rdbComercial
+            // 
+            rdbComercial.AutoSize = true;
+            rdbComercial.Location = new Point(9, 45);
+            rdbComercial.Name = "rdbComercial";
+            rdbComercial.Size = new Size(79, 19);
+            rdbComercial.TabIndex = 1;
+            rdbComercial.TabStop = true;
+            rdbComercial.Text = "Comercial";
+            rdbComercial.UseVisualStyleBackColor = true;
+            // 
+            // rdbPessoal
+            // 
+            rdbPessoal.AutoSize = true;
+            rdbPessoal.Location = new Point(9, 20);
+            rdbPessoal.Name = "rdbPessoal";
+            rdbPessoal.Size = new Size(64, 19);
+            rdbPessoal.TabIndex = 0;
+            rdbPessoal.TabStop = true;
+            rdbPessoal.Text = "Pessoal";
+            rdbPessoal.UseVisualStyleBackColor = true;
             // 
             // chkSenha
             // 
@@ -161,6 +221,7 @@
             mskTelefone.Name = "mskTelefone";
             mskTelefone.Size = new Size(194, 23);
             mskTelefone.TabIndex = 11;
+            mskTelefone.KeyDown += mskTelefone_KeyDown;
             // 
             // label3
             // 
@@ -170,61 +231,6 @@
             label3.Size = new Size(54, 15);
             label3.TabIndex = 12;
             label3.Text = "Telefone:";
-            // 
-            // rdbPessoal
-            // 
-            rdbPessoal.AutoSize = true;
-            rdbPessoal.Location = new Point(9, 20);
-            rdbPessoal.Name = "rdbPessoal";
-            rdbPessoal.Size = new Size(64, 19);
-            rdbPessoal.TabIndex = 0;
-            rdbPessoal.TabStop = true;
-            rdbPessoal.Text = "Pessoal";
-            rdbPessoal.UseVisualStyleBackColor = true;
-            // 
-            // rdbComercial
-            // 
-            rdbComercial.AutoSize = true;
-            rdbComercial.Location = new Point(9, 45);
-            rdbComercial.Name = "rdbComercial";
-            rdbComercial.Size = new Size(79, 19);
-            rdbComercial.TabIndex = 1;
-            rdbComercial.TabStop = true;
-            rdbComercial.Text = "Comercial";
-            rdbComercial.UseVisualStyleBackColor = true;
-            // 
-            // rdbRecado
-            // 
-            rdbRecado.AutoSize = true;
-            rdbRecado.Location = new Point(10, 72);
-            rdbRecado.Name = "rdbRecado";
-            rdbRecado.Size = new Size(64, 19);
-            rdbRecado.TabIndex = 2;
-            rdbRecado.TabStop = true;
-            rdbRecado.Text = "Recado";
-            rdbRecado.UseVisualStyleBackColor = true;
-            // 
-            // rdbAdmin
-            // 
-            rdbAdmin.AutoSize = true;
-            rdbAdmin.Location = new Point(15, 31);
-            rdbAdmin.Name = "rdbAdmin";
-            rdbAdmin.Size = new Size(61, 19);
-            rdbAdmin.TabIndex = 0;
-            rdbAdmin.TabStop = true;
-            rdbAdmin.Text = "Admin";
-            rdbAdmin.UseVisualStyleBackColor = true;
-            // 
-            // rdbComum
-            // 
-            rdbComum.AutoSize = true;
-            rdbComum.Location = new Point(14, 66);
-            rdbComum.Name = "rdbComum";
-            rdbComum.Size = new Size(69, 19);
-            rdbComum.TabIndex = 1;
-            rdbComum.TabStop = true;
-            rdbComum.Text = "Comum";
-            rdbComum.UseVisualStyleBackColor = true;
             // 
             // FormCadastro_User
             // 

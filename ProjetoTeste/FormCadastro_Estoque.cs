@@ -72,14 +72,14 @@ namespace ProjetoTeste
                     insert.Parameters.AddWithValue("@categoria", cbxCategoria.Text);
                     insert.Parameters.AddWithValue("@descricao", txtDescricao.Text);
                     insert.Parameters.AddWithValue("@quantidade", txtQTD.Text);
-                    insert.Parameters.AddWithValue("@vencimento", dtpVencimento.Value); 
+                    insert.Parameters.AddWithValue("@vencimento", dtpVencimento.Value);
                     insert.Parameters.AddWithValue("@idUser", Sessao.UsuarioId);
 
                     conexao.Open();
                     insert.ExecuteNonQuery();
                     MessageBox.Show("Cadastro realizado com sucesso!");
                     LimparCampos();
-                    
+
                 }
             }
             catch (MySqlException ex)
@@ -107,6 +107,46 @@ namespace ProjetoTeste
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mskId.Focus();
+            }
+        }
+
+        private void mskId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cbxCategoria.Focus();
+            }
+        }
+
+        private void cbxCategoria_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtQTD.Focus();
+            }
+        }
+
+        private void txtQTD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDescricao.Focus();
+            }
+        }
+
+        private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSalvar.PerformClick();
+            }
         }
     }
 }

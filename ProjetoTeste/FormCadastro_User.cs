@@ -73,7 +73,7 @@ namespace ProjetoTeste
                 string sql = "INSERT INTO usuario (nomeUsuario , senha , email , cpf , cep , telefone, tipo_telefone, tipo_usuario)" + "VALUES" + "" +
                     "(' " + txtUsuario.Text + " ' , ' " + txtSenha.Text + "', '"
                     + txtEmail.Text + " ' , ' " + mskCPF.Text + " ' , ' " + mskCEP.Text + " ',' "
-                    + mskTelefone.Text + " ',' "+ tipoTelefone+" ','"+ tipoUsuario+"')";
+                    + mskTelefone.Text + " ',' " + tipoTelefone + " ','" + tipoUsuario + "')";
 
                 MySqlCommand insert = new MySqlCommand(sql, conexao);
                 conexao.Open();
@@ -88,6 +88,53 @@ namespace ProjetoTeste
             }
         }
 
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSenha.Focus();
+            }
+        }
 
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtEmail.Focus();
+            }
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mskCEP.Focus();
+
+            }
+        }
+
+        private void mskCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mskCPF.Focus();
+            }
+        }
+
+        private void mskCPF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mskTelefone.Focus();
+            }
+        }
+
+        private void mskTelefone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                btnRegistro.PerformClick();
+            }
+        }
     }
 }

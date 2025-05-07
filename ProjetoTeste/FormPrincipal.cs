@@ -20,27 +20,9 @@ namespace ProjetoTeste
 
         private void Principal_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void mnsCadastro_Click(object sender, EventArgs e)
-        {
-            FormCadastro_Estoque formCadastro = new FormCadastro_Estoque();
-            formCadastro.Show();
-
-
-        }
-
-        private void mnsSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void mnsListaBD_Click(object sender, EventArgs e)
-        {
             string connectionString = "dataSource = localhost; username = root; password =; database = bd_Estoque";
             string query = "SELECT * FROM estoque";
-            dataGridView1.Visible = true;
+            
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -58,6 +40,25 @@ namespace ProjetoTeste
                     MessageBox.Show("Erro ao carregar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void mnsCadastro_Click(object sender, EventArgs e)
+        {
+            FormCadastro_Estoque formCadastro = new FormCadastro_Estoque();
+            formCadastro.Show();
+
+
+        }
+
+        private void mnsSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnsListaBD_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+            dataGridView1.Visible = true;
         }
     }
 }
