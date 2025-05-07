@@ -16,7 +16,7 @@ namespace ProjetoTeste
     public partial class FormCadastro_User : Form
     {
         MySqlConnection conexao;
-        private string data_source = "dataSource=localhost;username=root;password=;database=bd_Estoque";
+        private string data_source = "dataSource=localhost;username=root;password=;database=bd_estoque";
 
 
         public void LimparCampos()

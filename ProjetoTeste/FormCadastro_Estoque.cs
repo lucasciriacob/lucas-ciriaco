@@ -14,7 +14,7 @@ namespace ProjetoTeste
     public partial class FormCadastro_Estoque : Form
     {
         MySqlConnection conexao;
-        private string data_source = "dataSource=localhost;username=root;password=;database=bd_Estoque";
+        private string data_source = "dataSource=localhost;username=root;password=;database=bd_estoque";
 
         public void LimparCampos()
         {
@@ -59,34 +59,34 @@ namespace ProjetoTeste
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(data_source))
+                conexao = new MySqlConnection(data_source);
+                string sql = @"INSERT INTO estoque 
+                  (id, nome, categoria, descricao, quantidade, vencimento, idUser) 
+                  VALUES 
+                  (@id, @nome, @categoria, @descricao, @quantidade, @vencimento, @idUser)";
+
+                using (MySqlCommand insert = new MySqlCommand(sql, conexao))
                 {
-                    string sql = @"INSERT INTO estoque 
-                          (nome, categoria, descricao, quantidade, vencimento, idUser)
-                          VALUES 
-                          (@nome, @categoria, @descricao, @quantidade, @vencimento, @idUser)";
+                    insert.Parameters.AddWithValue("@id", mskId.Text);
+                    insert.Parameters.AddWithValue("@nome", txtNome.Text);
+                    insert.Parameters.AddWithValue("@categoria", cbxCategoria.Text);
+                    insert.Parameters.AddWithValue("@descricao", txtDescricao.Text);
+                    insert.Parameters.AddWithValue("@quantidade", txtQTD.Text);
+                    insert.Parameters.AddWithValue("@vencimento", dtpVencimento.Value); 
+                    insert.Parameters.AddWithValue("@idUser", Sessao.UsuarioId);
 
-                    using (MySqlCommand insert = new MySqlCommand(sql, conexao))
-                    {
-                        insert.Parameters.AddWithValue("@nome", txtNome.Text.Trim());
-                        insert.Parameters.AddWithValue("@categoria", cbxCategoria.Text.Trim());
-                        insert.Parameters.AddWithValue("@descricao", txtDescricao.Text.Trim());
-                        insert.Parameters.AddWithValue("@quantidade", int.Parse(txtQTD.Text.Trim()));
-                        insert.Parameters.AddWithValue("@vencimento", dtpVencimento.Value.Date);
-                        insert.Parameters.AddWithValue("@idUser", Sessao.UsuarioId); 
-
-                        conexao.Open();
-                        insert.ExecuteNonQuery();
-                    }
+                    conexao.Open();
+                    insert.ExecuteNonQuery();
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                    LimparCampos();
+                    
                 }
-
-                MessageBox.Show("Cadastro realizado com sucesso!");
-                LimparCampos();
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message);
             }
+
         }
 
 
@@ -97,6 +97,16 @@ namespace ProjetoTeste
                 txtDescricao.Enabled = false;
                 txtDescricao.Text = "Sem Descrição...";
             }
+            else
+            {
+                txtDescricao.Enabled = true;
+                txtDescricao.Text = "";
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

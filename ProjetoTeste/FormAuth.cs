@@ -29,7 +29,7 @@ namespace ProjetoTeste
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string connectionString = "datasource=localhost;username=root;password=;database=bd_Estoque";
+            string connectionString = "datasource=localhost;username=root;password=;database=bd_estoque";
 
             string usuario = txtUser.Text.Trim();
             string senha = txtSenha.Text.Trim();
@@ -56,7 +56,7 @@ namespace ProjetoTeste
 
                             LimparCampos();
 
-                            if (tipoUsuario == "Admin")
+                            if (tipoUsuario == "admin")
                             {
                                 FormMenu formAdmin = new FormMenu();
                                 formAdmin.Show();

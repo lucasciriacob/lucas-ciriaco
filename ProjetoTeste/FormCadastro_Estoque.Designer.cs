@@ -124,6 +124,7 @@
             btnVoltar.TabIndex = 13;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // chkDescricao
             // 

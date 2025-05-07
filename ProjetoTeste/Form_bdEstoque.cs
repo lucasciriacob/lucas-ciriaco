@@ -20,7 +20,7 @@ namespace ProjetoTeste
 
         private void Form_bdEstoque_Load(object sender, EventArgs e)
         {
-            string connectionString = "dataSource = localhost; username = root; password =; database = bd_Estoque";
+            string connectionString = "dataSource = localhost; username = root; password =; database = bd_estoque";
             string query = "SELECT * FROM estoque";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))

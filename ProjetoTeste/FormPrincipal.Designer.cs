@@ -28,25 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
             menuStrip1 = new MenuStrip();
             mnsSair = new ToolStripMenuItem();
             mnsCadastro = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            mnsListaBD = new ToolStripMenuItem();
+            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 27);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(323, 232);
-            dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnsSair, mnsCadastro });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnsSair, mnsCadastro, mnsListaBD });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RightToLeft = RightToLeft.Yes;
@@ -68,6 +61,22 @@
             mnsCadastro.Text = "Cadastrar Item";
             mnsCadastro.Click += mnsCadastro_Click;
             // 
+            // mnsListaBD
+            // 
+            mnsListaBD.Name = "mnsListaBD";
+            mnsListaBD.Size = new Size(74, 20);
+            mnsListaBD.Text = "Listar Item";
+            mnsListaBD.Click += mnsListaBD_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(0, 27);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(340, 238);
+            dataGridView1.TabIndex = 2;
+            dataGridView1.Visible = false;
+            // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -82,18 +91,18 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Principal";
             Load += Principal_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem mnsCadastro;
         private ToolStripMenuItem mnsSair;
+        private ToolStripMenuItem mnsListaBD;
+        private DataGridView dataGridView1;
     }
 }
