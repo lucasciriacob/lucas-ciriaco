@@ -26,6 +26,7 @@ namespace ProjetoTeste
             dtpVencimento.Value = DateTime.Now;
             chkVencimento.Checked = false;
             dtpVencimento.Enabled = true;
+            chkDescricao.Checked = false;
         }
         public FormCadastro_Estoque()
         {

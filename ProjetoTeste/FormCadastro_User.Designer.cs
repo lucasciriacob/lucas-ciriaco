@@ -46,6 +46,12 @@
             btnRegistro = new Button();
             mskTelefone = new MaskedTextBox();
             label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             gbxTipoFuncionario.SuspendLayout();
             gbxTipoTelefone.SuspendLayout();
             SuspendLayout();
@@ -100,7 +106,7 @@
             // 
             gbxTipoFuncionario.Controls.Add(rdbComum);
             gbxTipoFuncionario.Controls.Add(rdbAdmin);
-            gbxTipoFuncionario.Location = new Point(272, 153);
+            gbxTipoFuncionario.Location = new Point(272, 163);
             gbxTipoFuncionario.Name = "gbxTipoFuncionario";
             gbxTipoFuncionario.Size = new Size(200, 100);
             gbxTipoFuncionario.TabIndex = 5;
@@ -134,7 +140,7 @@
             gbxTipoTelefone.Controls.Add(rdbRecado);
             gbxTipoTelefone.Controls.Add(rdbComercial);
             gbxTipoTelefone.Controls.Add(rdbPessoal);
-            gbxTipoTelefone.Location = new Point(272, 36);
+            gbxTipoTelefone.Location = new Point(272, 46);
             gbxTipoTelefone.Name = "gbxTipoTelefone";
             gbxTipoTelefone.Size = new Size(200, 100);
             gbxTipoTelefone.TabIndex = 6;
@@ -219,7 +225,7 @@
             mskTelefone.Location = new Point(40, 256);
             mskTelefone.Mask = "(00) 00000-0000";
             mskTelefone.Name = "mskTelefone";
-            mskTelefone.Size = new Size(194, 23);
+            mskTelefone.Size = new Size(191, 23);
             mskTelefone.TabIndex = 11;
             mskTelefone.KeyDown += mskTelefone_KeyDown;
             // 
@@ -232,11 +238,83 @@
             label3.TabIndex = 12;
             label3.Text = "Telefone:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(214, 40);
+            label4.Name = "label4";
+            label4.Size = new Size(12, 15);
+            label4.TabIndex = 13;
+            label4.Text = "*";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(214, 80);
+            label5.Name = "label5";
+            label5.Size = new Size(12, 15);
+            label5.TabIndex = 14;
+            label5.Text = "*";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.White;
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(214, 129);
+            label6.Name = "label6";
+            label6.Size = new Size(12, 15);
+            label6.TabIndex = 15;
+            label6.Text = "*";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.White;
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(214, 173);
+            label7.Name = "label7";
+            label7.Size = new Size(12, 15);
+            label7.TabIndex = 16;
+            label7.Text = "*";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.White;
+            label8.ForeColor = Color.Red;
+            label8.Location = new Point(214, 216);
+            label8.Name = "label8";
+            label8.Size = new Size(12, 15);
+            label8.TabIndex = 17;
+            label8.Text = "*";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.White;
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(214, 259);
+            label9.Name = "label9";
+            label9.Size = new Size(12, 15);
+            label9.TabIndex = 18;
+            label9.Text = "*";
+            // 
             // FormCadastro_User
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 355);
+            ClientSize = new Size(507, 355);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(mskTelefone);
             Controls.Add(btnRegistro);
@@ -283,5 +361,11 @@
         private RadioButton rdbRecado;
         private RadioButton rdbComercial;
         private RadioButton rdbPessoal;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
     }
 }

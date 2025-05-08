@@ -38,12 +38,12 @@
             mnsEspaco2 = new ToolStripMenuItem();
             mnsEspaco3 = new ToolStripMenuItem();
             mnsEspaco4 = new ToolStripMenuItem();
+            mnsAtualizar = new ToolStripMenuItem();
+            mnsEspaco5 = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
             vScrollBar1 = new VScrollBar();
             panel1 = new Panel();
             dataGridView2 = new DataGridView();
-            mnsEspaco5 = new ToolStripMenuItem();
-            mnsAtualizar = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -53,35 +53,35 @@
             // mnsCadEstoque
             // 
             mnsCadEstoque.Name = "mnsCadEstoque";
-            mnsCadEstoque.Size = new Size(118, 19);
+            mnsCadEstoque.Size = new Size(107, 19);
             mnsCadEstoque.Text = "Cadastro Estoque";
             mnsCadEstoque.Click += mnsCadEstoque_Click;
             // 
             // mnsCadUser
             // 
             mnsCadUser.Name = "mnsCadUser";
-            mnsCadUser.Size = new Size(118, 19);
+            mnsCadUser.Size = new Size(107, 19);
             mnsCadUser.Text = "Cadastro Usuarios";
             mnsCadUser.Click += mnsCadUser_Click;
             // 
             // mnsEstoque
             // 
             mnsEstoque.Name = "mnsEstoque";
-            mnsEstoque.Size = new Size(118, 19);
+            mnsEstoque.Size = new Size(107, 19);
             mnsEstoque.Text = "Lista Estoque";
             mnsEstoque.Click += mnsEstoque_Click;
             // 
             // mnsUsuarios
             // 
             mnsUsuarios.Name = "mnsUsuarios";
-            mnsUsuarios.Size = new Size(118, 19);
+            mnsUsuarios.Size = new Size(107, 19);
             mnsUsuarios.Text = "Lista Usuarios";
             mnsUsuarios.Click += mnsUsuarios_Click;
             // 
             // mnsSair
             // 
             mnsSair.Name = "mnsSair";
-            mnsSair.Size = new Size(118, 19);
+            mnsSair.Size = new Size(107, 19);
             mnsSair.Text = "Sair";
             mnsSair.Click += mnsSair_Click;
             // 
@@ -89,9 +89,9 @@
             // 
             menuStrip1.Dock = DockStyle.Right;
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnsCadEstoque, mnsEspaco, mnsCadUser, mnsEspaco2, mnsEstoque, mnsEspaco3, mnsUsuarios, mnsEspaco4, mnsAtualizar, mnsEspaco5, mnsSair });
-            menuStrip1.Location = new Point(545, 0);
+            menuStrip1.Location = new Point(551, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(126, 501);
+            menuStrip1.Size = new Size(120, 501);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -99,29 +99,43 @@
             // 
             mnsEspaco.Enabled = false;
             mnsEspaco.Name = "mnsEspaco";
-            mnsEspaco.Size = new Size(118, 19);
+            mnsEspaco.Size = new Size(107, 19);
             mnsEspaco.Text = "ㅤㅤㅤㅤㅤㅤㅤ";
             // 
             // mnsEspaco2
             // 
             mnsEspaco2.Enabled = false;
             mnsEspaco2.Name = "mnsEspaco2";
-            mnsEspaco2.Size = new Size(118, 19);
+            mnsEspaco2.Size = new Size(107, 19);
             mnsEspaco2.Text = "ㅤ";
             // 
             // mnsEspaco3
             // 
             mnsEspaco3.Enabled = false;
             mnsEspaco3.Name = "mnsEspaco3";
-            mnsEspaco3.Size = new Size(118, 19);
+            mnsEspaco3.Size = new Size(107, 19);
             mnsEspaco3.Text = "ㅤ";
             // 
             // mnsEspaco4
             // 
             mnsEspaco4.Enabled = false;
             mnsEspaco4.Name = "mnsEspaco4";
-            mnsEspaco4.Size = new Size(118, 19);
+            mnsEspaco4.Size = new Size(107, 19);
             mnsEspaco4.Text = "ㅤ";
+            // 
+            // mnsAtualizar
+            // 
+            mnsAtualizar.Name = "mnsAtualizar";
+            mnsAtualizar.Size = new Size(107, 19);
+            mnsAtualizar.Text = "Atualizar Página";
+            mnsAtualizar.Click += mnsAtualizar_Click;
+            // 
+            // mnsEspaco5
+            // 
+            mnsEspaco5.Enabled = false;
+            mnsEspaco5.Name = "mnsEspaco5";
+            mnsEspaco5.Size = new Size(107, 19);
+            mnsEspaco5.Text = "             ";
             // 
             // dataGridView1
             // 
@@ -133,9 +147,9 @@
             // 
             // vScrollBar1
             // 
-            vScrollBar1.Location = new Point(529, 0);
+            vScrollBar1.Location = new Point(529, -1);
             vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(17, 566);
+            vScrollBar1.Size = new Size(20, 501);
             vScrollBar1.TabIndex = 5;
             vScrollBar1.Scroll += vScrollBar1_Scroll;
             // 
@@ -157,20 +171,6 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(516, 283);
             dataGridView2.TabIndex = 3;
-            // 
-            // mnsEspaco5
-            // 
-            mnsEspaco5.Enabled = false;
-            mnsEspaco5.Name = "mnsEspaco5";
-            mnsEspaco5.Size = new Size(118, 19);
-            mnsEspaco5.Text = "             ";
-            // 
-            // mnsAtualizar
-            // 
-            mnsAtualizar.Name = "mnsAtualizar";
-            mnsAtualizar.Size = new Size(113, 19);
-            mnsAtualizar.Text = "Atualizar Página";
-            mnsAtualizar.Click += mnsAtualizar_Click;
             // 
             // FormMenu
             // 

@@ -40,6 +40,11 @@
             chkDescricao = new CheckBox();
             mskId = new MaskedTextBox();
             txtQTD = new TextBox();
+            label4 = new Label();
+            label2 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
             SuspendLayout();
             // 
             // txtNome
@@ -160,11 +165,71 @@
             txtQTD.TabIndex = 15;
             txtQTD.KeyDown += txtQTD_KeyDown;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(183, 50);
+            label4.Name = "label4";
+            label4.Size = new Size(12, 15);
+            label4.TabIndex = 16;
+            label4.Text = "*";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(29, 97);
+            label2.Name = "label2";
+            label2.Size = new Size(12, 15);
+            label2.TabIndex = 17;
+            label2.Text = "*";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(183, 139);
+            label5.Name = "label5";
+            label5.Size = new Size(12, 15);
+            label5.TabIndex = 18;
+            label5.Text = "*";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.White;
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(91, 179);
+            label6.Name = "label6";
+            label6.Size = new Size(12, 15);
+            label6.TabIndex = 19;
+            label6.Text = "*";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.White;
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(377, 50);
+            label7.Name = "label7";
+            label7.Size = new Size(12, 15);
+            label7.TabIndex = 20;
+            label7.Text = "*";
+            // 
             // FormCadastro_Estoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(414, 390);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label2);
+            Controls.Add(label4);
             Controls.Add(txtQTD);
             Controls.Add(chkDescricao);
             Controls.Add(btnVoltar);
@@ -199,5 +264,10 @@
         private CheckBox chkDescricao;
         private MaskedTextBox mskId;
         private TextBox txtQTD;
+        private Label label4;
+        private Label label2;
+        private Label label5;
+        private Label label6;
+        private Label label7;
     }
 }

@@ -20,45 +20,45 @@ namespace ProjetoTeste
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            string connectionString = "dataSource = localhost; username = root; password =; database = bd_Estoque";
-            string query = "SELECT * FROM estoque";
-            
+            string connectionString = "server=localhost;username=root;password=;database=bd_Estoque";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                try
+                string query = "SELECT * FROM estoque WHERE idUser = @idUser";
+                using (MySqlCommand cmdSelect = new MySqlCommand(query, connection))
                 {
-                    connection.Open();
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    cmdSelect.Parameters.AddWithValue("@idUser", Sessao.UsuarioId);
+
+                    try
                     {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        dataGridView1.DataSource = dataTable;
+                        connection.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmdSelect)) 
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            dataGridView1.DataSource = dataTable;
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao carregar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao carregar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
-
+        private void mnsListaBD_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel1.Visible = true;   
+        }
         private void mnsCadastro_Click(object sender, EventArgs e)
         {
             FormCadastro_Estoque formCadastro = new FormCadastro_Estoque();
             formCadastro.Show();
-
-
         }
-
         private void mnsSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void mnsListaBD_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Visible = false;
-            dataGridView1.Visible = true;
         }
     }
 }
